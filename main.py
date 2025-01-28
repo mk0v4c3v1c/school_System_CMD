@@ -20,7 +20,7 @@ def main_menu():
             add_grade()
         elif choice == "4":
             view_grades()
-        elif choice == "5":
+        elif choice == "5":1
             print("Exiting the program. Goodbye!")
             break
         else:
