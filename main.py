@@ -9,6 +9,7 @@ def main_menu():
         print("3. Add Grades")
         print("4. View Grades")
         print("5. Exit")
+        print("=== Choose an option (1-5) ===")
 
         choice = input("Enter your choice: ")
 
