@@ -5,7 +5,7 @@ from utils import export_students_to_csv
 from students import students
 
 def menu():
-    """CMD meni"""
+    """CMD menu"""
     while True:
         print("\n--- School System Menu ---")
         print("1. Add Student")
