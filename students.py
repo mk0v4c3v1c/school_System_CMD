@@ -1,5 +1,10 @@
 students = []
 
+def generate_student_id():
+    #Generating unique ID for student
+    count = len(students)
+    return f"ID_{count:02d}"
+
 def add_student():
     #Add students
     student_id = input("Enter Student ID: ")
@@ -10,7 +15,7 @@ def add_student():
         print("Invalid age. Please enter a number.")
         return
     students.append({"id": student_id, "name": name, "age": age, "grades": {}})
-    print(f"Student {name} has been added successfully!")
+    print(f"Student {name} has been added successfully with ID {student_id}!")
 
 def list_students():
     #List students
