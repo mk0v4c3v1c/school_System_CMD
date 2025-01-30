@@ -14,21 +14,6 @@ This is a command-line application for managing a simple school system. It allow
 
     *   Export student data to a CSV file
 
-The project is structured in a modular way, ensuring clean and maintainable code.
-
-**Project Structure**
-
-school_system/
-    │
-        ├── main.py                 # Entry point of the application
-        ├── students.py             # Handles student operations (add, list, remove)
-        ├── classes.py              # Handles subject/class operations
-        ├── grades.py               # Handles grade operations (assign, view, calculate averages)
-        ├── utils.py                # Helper functions (data handling, validation, etc.)
-        ├── menu.py                 # CLI menu logic
-        ├── data/
-        │   └── students.csv        # Stores student data (generated dynamically)
-
 **Features**
 
     Student Management: Add, list, and remove students.
@@ -77,3 +62,6 @@ When you run python main.py, a menu will appear with the following options:
 9. Exit
 
 Follow the prompts to perform various actions.
+
+**License:**
+mk0v4c3v1c
