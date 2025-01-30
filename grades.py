@@ -1,5 +1,25 @@
 from students import find_student_by_id
 
+def calculate_all_subject_averages():
+    #Calculate averege all subjects
+    from students import students
+    subjects_totals = {}
+    subjects_count = {}
+
+    for student in students:
+        for subject, grade in student["grades"].items():
+            if subject not in subjects_totals:
+                subjects_totals[subject] = 0
+                subjects_count[subject] = 0
+            subjects_totals[subject] += 1
+            subjects_count[subject] += grade
+
+    print("\n--- Average Grades by Subject ---")
+    for subject, total in subjects_totals.items():
+        avg = total/subjects_count[subject]
+        print(f"{subject}: {avg:.2f}")
+    print()
+
 def add_grade():
     #Add grades for student
     student_id = input("Enter Student ID: ")
