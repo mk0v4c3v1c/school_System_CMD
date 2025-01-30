@@ -19,15 +19,15 @@ The project is structured in a modular way, ensuring clean and maintainable code
 **Project Structure**
 
 school_system/
-│
-├── main.py                 # Entry point of the application
-├── students.py             # Handles student operations (add, list, remove)
-├── classes.py              # Handles subject/class operations
-├── grades.py               # Handles grade operations (assign, view, calculate averages)
-├── utils.py                # Helper functions (data handling, validation, etc.)
-├── menu.py                 # CLI menu logic
-├── data/
-│   └── students.csv        # Stores student data (generated dynamically)
+    │
+        ├── main.py                 # Entry point of the application
+        ├── students.py             # Handles student operations (add, list, remove)
+        ├── classes.py              # Handles subject/class operations
+        ├── grades.py               # Handles grade operations (assign, view, calculate averages)
+        ├── utils.py                # Helper functions (data handling, validation, etc.)
+        ├── menu.py                 # CLI menu logic
+        ├── data/
+        │   └── students.csv        # Stores student data (generated dynamically)
 
 **Features**
 
@@ -55,6 +55,7 @@ school_system/
 
 `pip install -r requirements.txt  # If additional dependencies are required
 `
+
 3. Run the Application
 
 `python main.py
