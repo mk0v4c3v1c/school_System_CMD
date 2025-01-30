@@ -10,7 +10,10 @@ def add_grade():
 
     subject = input("Enter Subject: ")
     try:
-        grade = float(input("Enter Grade: "))
+        grade = float(input("Enter Grade (5-10): "))
+        if grade < 5 or grade > 10:
+            print("Grade must be between 5 and 10")
+            return
     except ValueError:
         print("Invalid grade. Please enter a number.")
         return
