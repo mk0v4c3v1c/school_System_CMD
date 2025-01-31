@@ -31,3 +31,16 @@ def list_students():
 def find_student_by_id(student_id):
     #Find student
     return next((s for s in students if s["id"] == student_id), None)
+
+#Find student by name
+def search_student_by_name():
+    query = input("Enter part of the student's name: ").lower()
+    results = [student for student in students if query in student["name"].lower()]
+
+    if results:
+        print("\n--- Search Results ---")
+        for student in results:
+            print(f"ID: {student['id']}, Name: {student['name']}, Age: {student['age']}")
+    else:
+        print("No students found with that name.")
+
