@@ -1,13 +1,13 @@
 classes = []
 
+#Add class
 def add_class():
-    #Add class
     class_name = input("Enter Class Name: ")
     classes.append({"name": class_name, "students": []})
     print(f"Class {class_name} has been added successfully!")
 
+#Show classes
 def list_classes():
-    #Show classes
     if not classes:
         print("No classes available.")
         return

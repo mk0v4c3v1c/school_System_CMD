@@ -1,7 +1,7 @@
 import csv
 
+#Exporting list students into csv file
 def export_students_to_csv(students):
-    #Exporting list students into csv file
     filename = input("Enter filename to export (e.g., students.csv): ")
     try:
         with open(filename, mode="w", newline="") as file:

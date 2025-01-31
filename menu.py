@@ -4,8 +4,8 @@ from grades import add_grade, calculate_student_average, calculate_subject_avera
 from utils import export_students_to_csv
 from students import students
 
+#CMD MENU
 def menu():
-    """CMD menu"""
     while True:
         print("\n--- School System Menu ---")
         print("1. Add Student")

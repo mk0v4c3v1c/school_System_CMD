@@ -1,12 +1,12 @@
 students = []
 
+#Generating unique ID for student
 def generate_student_id():
-    #Generating unique ID for student
     count = len(students)
     return f"ID_{count:02d}"
 
+#Add students
 def add_student():
-    #Add students
     student_id = input("Enter Student ID: ")
     name = input("Enter Student Name: ")
     try:
@@ -17,8 +17,8 @@ def add_student():
     students.append({"id": student_id, "name": name, "age": age, "grades": {}})
     print(f"Student {name} has been added successfully with ID {student_id}!")
 
+#List students
 def list_students():
-    #List students
     if not students:
         print("No students available.")
         return
@@ -28,8 +28,8 @@ def list_students():
         print(f"ID: {student['id']}, Name: {student['name']}, Age: {student['age']}, Grades: {grades_str if grades_str else 'No grades yet'}")
     print()
 
+#Find student
 def find_student_by_id(student_id):
-    #Find student
     return next((s for s in students if s["id"] == student_id), None)
 
 #Find student by name

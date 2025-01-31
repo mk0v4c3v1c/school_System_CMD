@@ -1,9 +1,8 @@
 from students import find_student_by_id, students
 import csv
 
-
+#Calculate averege all subjects
 def calculate_all_subject_averages():
-    #Calculate averege all subjects
     from students import students
     subjects_totals = {}
     subjects_count = {}
@@ -22,8 +21,8 @@ def calculate_all_subject_averages():
         print(f"{subject}: {avg:.2f}")
     print()
 
+#Add grades for student
 def add_grade():
-    #Add grades for student
     student_id = input("Enter Student ID: ")
     student = find_student_by_id(student_id)
     if not student:
@@ -43,8 +42,8 @@ def add_grade():
     student["grades"][subject] = grade
     print(f"Grade {grade} for {subject} added to student {student['name']}.")
 
+#Calculate average grade for one student
 def calculate_student_average():
-    #Calculate average grade for one student
     student_id = input("Enter Student ID: ")
     student = find_student_by_id(student_id)
     if not student:
@@ -58,8 +57,8 @@ def calculate_student_average():
     avg = sum(student["grades"].values()) / len(student["grades"])
     print(f"Student {student['name']} has an average grade of {avg:.2f}.")
 
+#Calculate average grade for class course
 def calculate_subject_average():
-    #Calculate average grade for class course
     subject = input("Enter Subject: ")
     total = 0
     count = 0
@@ -76,8 +75,8 @@ def calculate_subject_average():
         avg = total / count
         print(f"The average grade for {subject} is {avg:.2f}.")
 
+#Show bet student per subject
 def best_student_in_subject(subject):
-    #Show bet student per subject
     best_student = None
     highest_grade = -1
 
@@ -91,8 +90,8 @@ def best_student_in_subject(subject):
     else:
         print(f"No grades recorded for {subject}.")
 
+ #Show top 3 student per average grades
 def top_students():
-    #Show top 3 student per average grades
     averages = []
     for student in students:
         grades = student["grades"].values()
