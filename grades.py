@@ -89,3 +89,18 @@ def best_student_in_subject(subject):
         print(f"Best student in {subject} is {best_student['name']} with grade of {highest_grade:.2f}.")
     else:
         print(f"No grades recorded for {subject}.")
+
+def top_students():
+    #Show top 3 student per average grades
+    averages = []
+    for student in students:
+        grades = student["grades"].values()
+        if grades:
+            avg = sum(grades) / len(grades)
+            averages.append((student["name"], avg))
+
+    #Sort by averege grade
+    top_3 = sorted(averages, key=lambda x: x[1], reverse=True)[:3]
+    print("\n--- Top 3 Students ---")
+    for i, (name, avg) in enumerate(top_3, 1):
+        print(f"{i}. {name} - Average Grade: {avg:.2f}")
