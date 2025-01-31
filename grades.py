@@ -1,4 +1,5 @@
 from students import find_student_by_id, students
+import csv
 
 
 def calculate_all_subject_averages():
@@ -104,3 +105,33 @@ def top_students():
     print("\n--- Top 3 Students ---")
     for i, (name, avg) in enumerate(top_3, 1):
         print(f"{i}. {name} - Average Grade: {avg:.2f}")
+
+
+#Exporting student grades and subjects in CSV file
+def export_averages_to_csv():
+    averages = []
+    for student in students:
+        grades = student["grades"].values()
+        if grades:
+            avg = sum(grades) / len(grades)
+            averages.append((student["id"], student["name"], avg))
+
+    subject_averages = {}
+    for student in students:
+        for subject, grade in student["grades"].items():
+            if subject not in subject_averages:
+                subject_averages[subject] = []
+            subject_averages[subject].append(grade)
+
+    with open("averages.csv", mode="w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(["Student ID", "Student Name", "Average Grade"])
+        for student_id, name, avg in averages:
+            writer.writerow([student_id, name, f"{avg:.2f}"])
+
+        writer.writerow([])
+        writer.writerow(["Subject", "Average Grade"])
+        for subject, grades in subject_averages.items():
+            writer.writerow([subject, f"{sum(grades) / len(grades):.2f}"])
+
+    print("Averages successfully exported to 'averages.csv'.")
