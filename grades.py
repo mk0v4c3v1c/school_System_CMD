@@ -1,4 +1,5 @@
-from students import find_student_by_id
+from students import find_student_by_id, students
+
 
 def calculate_all_subject_averages():
     #Calculate averege all subjects
@@ -73,3 +74,18 @@ def calculate_subject_average():
     else:
         avg = total / count
         print(f"The average grade for {subject} is {avg:.2f}.")
+
+def best_student_in_subject(subject):
+    #Show bet student per subject
+    best_student = None
+    highest_grade = -1
+
+    for student in students:
+        if subject in student["grades"] and student["grades"][subject] > highest_grade:
+            best_student = student
+            highest_grade = student["grades"][subject]
+
+    if best_student:
+        print(f"Best student in {subject} is {best_student['name']} with grade of {highest_grade:.2f}.")
+    else:
+        print(f"No grades recorded for {subject}.")
